@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<catalog>
+	<language>
+		<name>English</name>
+		<alphabet>abcdefg</alphabet>
+		<words>Data structures is oh so much fun.</words>
+		<random>blah char@cters k**k !n n0t working -.-</random>
+	</language>
+	<language>
+		<name>Chinese</name>
+		<alphabet>pinyin blah or 汉语</alphabet>
+		<words>我只爱中文。 我不知道这是对不对</words>
+		<random>- —— =+ 8* ……；）</random> 
+	</language>
+	<language>
+		<name>Hindi</name>
+		<alphabet>supercalafragilisticexpialadocious ेदीीब, ैपोूय़</alphabet>
+		<words>साीो लोस ेपोतालग पाग. ोज को लोस कबो पागय़</words>
+		<random>bतदत पगल्ग. जोजह मोलटू ्ोलमा. ोतत गेे ैातत. जोलोरग.ेपहकीगोऍ ऍऍ</random>
+	</language>
+	<language>
+		<name>ASCII</name>
+		<alphabet>abcdefg</alphabet>
+		<words>Who doesn't loooooove ascii????</words>
+		<random>À ¼ » ¶ yay</random>
+	</language>
+</catalog>
