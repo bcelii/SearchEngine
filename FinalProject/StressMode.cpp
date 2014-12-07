@@ -2,7 +2,12 @@
 
 StressMode::StressMode()
 {
-
+    stressTestOutput = new char[80];
+    strcpy(stressTestOutput,"StressTestOutput.txt");
+    //open file and clear it
+    ofstream output;
+    output.open(stressTestOutput);
+    output.close();
 }
 
 StressMode:: ~StressMode()
@@ -34,6 +39,13 @@ void StressMode::docFileParser(string& fileName)
         }
 
         else if(flag == "BI"){
+            ofstream output;
+            output.open(stressTestOutput,ios::app);
+            output<<"\nIndex = "<<(structureChoice == 0?
+                        "HashTable":"AVL Tree");
+            output<<endl;
+            output.close();
+
             cout << "build index from memory" << endl;
             //choose 1 for AVL tree and 0 for HashTable
             int userChoice;
@@ -46,9 +58,6 @@ void StressMode::docFileParser(string& fileName)
             interact.createIndex(userChoice);
             //create the index of the XML parser of Index Handler
             myParser.createIndex(userChoice);
-
-
-
 
         }
 
@@ -114,6 +123,7 @@ void StressMode::docFileParser(string& fileName)
 
         else if (flag == "PT"){
             cout << "print time" << endl;
+
             printTime();
 
             getline(ifs,dummy);
@@ -149,4 +159,10 @@ void StressMode::printTime()
 {
     std::chrono::duration<double> elapsed_seconds = end-start;
     cout << "Duration: " << elapsed_seconds.count() << " seconds" << endl;
+
+    //open up file and print out
+    ofstream output;
+    output.open(stressTestOutput,ios::app);
+    output<<"ElapsedTime = "<<elapsed_seconds.count()<<endl;
+
 }

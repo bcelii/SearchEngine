@@ -34,7 +34,7 @@ XMLParser::~XMLParser(){
     cout<<"before XMLFileParser"<<endl;
     myParser.~XMLFileParser();
     cout<<"Before doc.clear"<<endl;
-    //doc.clear(); //deallocate memory pool of rapidxml class
+    doc.clear(); //deallocate memory pool of rapidxml class
     pageMin.clear();
     pageMax.clear();
     cout<<"END Destructor: XMLParser"<<endl;
@@ -162,8 +162,12 @@ void XMLParser::storeOffNewData(string &fileName)
 
 void XMLParser::storeOffPageRange()
 {
+    cout<<"Inside storeOffPageRange()"<<endl;
     ofstream out;
     out.open("pageRange.txt");
+    if(!out){
+        cout<<"Couldn't open pageRangee"<<endl;
+    }
 
     size_t size = pageMin.size();
 

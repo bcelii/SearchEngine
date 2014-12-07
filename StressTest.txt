@@ -1,14 +1,28 @@
 CI
 ST
-BI 1
+BI 0
 ET 
-IF WikiDumpPart180.xml
+PT
+ST
 SE AND brendan man
 PP 1
-ST
 NS
-SE AND bcelii Fontenode
-ST
+SE AND dog tree box
 PP 1
+NS
+ET
+PT
+CI
+ST
+BI 0
+ET 
+PT
+ST
+SE AND brendan man
+PP 1
+NS
+SE AND dog tree box
+PP 1
+NS
 ET
 PT

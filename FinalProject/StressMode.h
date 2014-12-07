@@ -25,7 +25,7 @@ private:
     InteractiveMode interact;
     XMLParser myParser;
     int structureChoice;
-
+    char* stressTestOutput;
     std::chrono::time_point<std::chrono::system_clock> start, end;
 
 public:

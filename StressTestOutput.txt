@@ -1,0 +1,8 @@
+
+Index = AVL Tree
+ElapsedTime = 33.9199
+ElapsedTime = 8.03846
+
+Index = HashTable
+ElapsedTime = 32.4629
+ElapsedTime = 7.65344
