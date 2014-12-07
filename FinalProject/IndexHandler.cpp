@@ -66,7 +66,7 @@ void IndexHandler::createIndex(int choice){
 
 IndexHandler::~IndexHandler(){
 
-    cout<<"BEGIN Destructor: IndexHandler"<<endl;
+    //cout<<"BEGIN Destructor: IndexHandler"<<endl;
     if(myWordParser != NULL){
 
         delete myWordParser;
@@ -80,7 +80,7 @@ IndexHandler::~IndexHandler(){
     if(memoryOutputFile != NULL){
         delete[] memoryOutputFile;
     }*/
-    cout<<"END destructor: IndexHandler"<<endl;
+    //cout<<"END destructor: IndexHandler"<<endl;
 }
 
 int IndexHandler::getTotalDocs(){

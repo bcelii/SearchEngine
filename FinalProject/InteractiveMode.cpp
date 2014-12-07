@@ -25,14 +25,14 @@ InteractiveMode::InteractiveMode()
 
 InteractiveMode::~InteractiveMode(){
 
-    cout<<"BEGIN Destructor: InteractiveMode"<<endl;
+    //cout<<"BEGIN Destructor: InteractiveMode"<<endl;
     if(myXMLParser != NULL){
         delete myXMLParser;
     }
     if(IMHandler != NULL){
        delete IMHandler;
     }
-    cout<<"End Destructor: Interactive Mode "<<endl;
+    //cout<<"End Destructor: Interactive Mode "<<endl;
 }
 
 void InteractiveMode::clearIndex(){
@@ -248,18 +248,18 @@ void InteractiveMode::pickTop15(){
     finalTF.clear();
     finalTitles.clear();
     int counter = 0;
-    cout<<"TotalPages size = "<<totalPages.size()<<endl;
-    for(int i = 0;i<totalPages.size();i++){
+    //cout<<"TotalPages size = "<<totalPages.size()<<endl;
+    /*for(int i = 0;i<totalPages.size();i++){
         cout<<totalPages.at(i);
-    }
+    }*/
 
     while(finalPages.size()<15 && counter<totalPages.size()){
         int currPage = totalPages.at(counter);
-        cout<<"Right before navigate to page"<<endl;
+        //cout<<"Right before navigate to page"<<endl;
         myXMLParser->navigateToPage(currPage);
 
         //if there was a specified author check and see if it is the same
-        cout<<"After navigate to page"<<endl;
+        //cout<<"After navigate to page"<<endl;
         string delimiter = " ";
         if(currAuthor.compare("") != 0){
             string pageAuthor = myXMLParser->getAuthor();
@@ -273,7 +273,7 @@ void InteractiveMode::pickTop15(){
                    break;
                }
             }
-            cout<<"After eliminating leading white space"<<endl;
+            //cout<<"After eliminating leading white space"<<endl;
 
             //eliminate trailing white space
             while(pageAuthor.size()>=1){
@@ -286,14 +286,14 @@ void InteractiveMode::pickTop15(){
                 }
             }
 
-            cout<<"After eliminating trailing white space"<<endl;
+            //cout<<"After eliminating trailing white space"<<endl;
             //compare author requested and page author and if the same then
             //keep checking
             if(currAuthor.compare(pageAuthor) != 0){
                 counter++;
                 continue;
             }
-            cout<<"Done Author Analysis"<<endl;
+            //cout<<"Done Author Analysis"<<endl;
         }
         //get date of page
         string pageDate = myXMLParser->getDate();
@@ -453,7 +453,7 @@ bool InteractiveMode::processQuery(string userQuery){
         //cout<<"NewUserQuery "<<userQuery<<endl;
         //cout<<"size = "<<userQuery.size()<<endl;
 
-        cout<<"Inside Query Process First Command"<<firstCommand;
+        //cout<<"Inside Query Process First Command"<<firstCommand;
         string currKeyWord = firstCommand;
 
         //get all words until next keyword
@@ -520,13 +520,13 @@ bool InteractiveMode::processQuery(string userQuery){
 
             //verify that at least got one argument
             if(nextWords.size()<1){
-                cout<<"Keyword was followed by no arguments so just ignoring"<<endl;
+                //cout<<"Keyword was followed by no arguments so just ignoring"<<endl;
                 currKeyWord = currWord;
                 //cout<<"currKeyWord inside empty list catcher = "<<currKeyWord;
                 continue;
 
             }
-            cout<<"right before AND, OR"<<endl;
+            //cout<<"right before AND, OR"<<endl;
             //call the keyword function
             if(currKeyWord.compare("AND") == 0){
                 //create vectors to pass by reference
@@ -578,12 +578,12 @@ bool InteractiveMode::processQuery(string userQuery){
         }
 
         //order the pages TFs
-        cout<<"after ands/ors"<<endl;
+        //cout<<"after ands/ors"<<endl;
         //sort the pages according to frequency
         insertion_sort(totalPages,totalTF,0,totalPages.size()-1);
-        cout<<"after Insertion sort"<<endl;
+        //cout<<"after Insertion sort"<<endl;
         pickTop15();
-        cout<<"afterTop15"<<endl;
+        //cout<<"afterTop15"<<endl;
         return false;
 }
 

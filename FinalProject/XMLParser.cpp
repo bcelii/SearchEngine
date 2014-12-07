@@ -12,12 +12,12 @@ XMLParser::XMLParser()
 }
 
 XMLParser::~XMLParser(){
-    cout<<"BEGIN Destructor: XMLParser"<<endl;
+    //cout<<"BEGIN Destructor: XMLParser"<<endl;
     if(myHandler != NULL){
 
         delete myHandler;
     }
-    cout<<"After delete myHandler"<<endl;
+    //cout<<"After delete myHandler"<<endl;
     //delete myLookUpTable;
 
     if (XMLDumpFile != nullptr)
@@ -31,13 +31,13 @@ XMLParser::~XMLParser(){
     /*if (text != nullptr)
         delete[] text;
     text = nullptr;*/
-    cout<<"before XMLFileParser"<<endl;
+    //cout<<"before XMLFileParser"<<endl;
     myParser.~XMLFileParser();
-    cout<<"Before doc.clear"<<endl;
+    //cout<<"Before doc.clear"<<endl;
     doc.clear(); //deallocate memory pool of rapidxml class
     pageMin.clear();
     pageMax.clear();
-    cout<<"END Destructor: XMLParser"<<endl;
+    //cout<<"END Destructor: XMLParser"<<endl;
 }
 
 void XMLParser::createIndex(int choice){
@@ -132,7 +132,7 @@ void XMLParser::storeOffNewData(string &fileName)
     xml_node<>* pageNode = docNode->first_node("page");
     string text;
 
-    cout << "PageMin size: " << pageMin.size();
+    //cout << "PageMin size: " << pageMin.size();
     //loop through all pages in one file
     myParser.setNodes(pageNode);
     id = myParser.findPageID();
@@ -155,14 +155,14 @@ void XMLParser::storeOffNewData(string &fileName)
         pageNode = pageNode->next_sibling("page");
 
     }
-    cout << "New PageMin size: " << pageMin.size() << endl;
+    //cout << "New PageMin size: " << pageMin.size() << endl;
 
 
 }
 
 void XMLParser::storeOffPageRange()
 {
-    cout<<"Inside storeOffPageRange()"<<endl;
+    //cout<<"Inside storeOffPageRange()"<<endl;
     ofstream out;
     out.open("pageRange.txt");
     if(!out){
@@ -224,19 +224,19 @@ bool XMLParser::navigateToPage(int page)
 {
     size_t fileNo = 1;
     size_t end = pageMin.size()-1;
-    cout<<"End = "<<end;
+    //cout<<"End = "<<end;
     if (page <= 305548){
-        cout<<"inside less that 305548"<<endl;
+        //cout<<"inside less that 305548"<<endl;
         fileNo = binarySearch(0, 179, page)+1;}
     else{
-        cout<<"outside 305548"<<endl;
+        //cout<<"outside 305548"<<endl;
         fileNo = binarySearch(179, end, page)+1;}
-    cout<<"End of binary Search"<<endl;
+    //cout<<"End of binary Search"<<endl;
     string fileName = "WikiDumpPart";
     fileName += to_string(fileNo);
     fileName += ".xml";
 
-    cout << "navigate to file: " << fileName << endl;
+    //cout << "navigate to file: " << fileName << endl;
     setXMLDumpFile(fileName);
     doc.clear();
     doc.parse<0>(XMLDumpFile);

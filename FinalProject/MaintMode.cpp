@@ -58,7 +58,7 @@ void MaintMode::getUserCommand()
         cin >> loopChoice;
     }
 
-    cout << "Re-store index" << endl;
+    cout << "Re-store index. Pleas wait patiently!" << endl;
     char* out = "Index.txt\0";
     myXMLParser.storeOffIndex(out);
     myXMLParser.storeOffPageRange();
