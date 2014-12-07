@@ -1,0 +1,225 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.9/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.9/ http://www.mediawiki.org/xml/export-0.9.xsd" version="0.9" xml:lang="en">
+  <siteinfo>
+    <sitename>Wikibooks</sitename>
+    <dbname>enwikibooks</dbname>
+    <base>http://en.wikibooks.org/wiki/Main_Page</base>
+    <generator>MediaWiki 1.25wmf4</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Wikibooks</namespace>
+      <namespace key="5" case="first-letter">Wikibooks talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="102" case="first-letter">Cookbook</namespace>
+      <namespace key="103" case="first-letter">Cookbook talk</namespace>
+      <namespace key="108" case="first-letter">Transwiki</namespace>
+      <namespace key="109" case="first-letter">Transwiki talk</namespace>
+      <namespace key="110" case="first-letter">Wikijunior</namespace>
+      <namespace key="111" case="first-letter">Wikijunior talk</namespace>
+      <namespace key="112" case="first-letter">Subject</namespace>
+      <namespace key="113" case="first-letter">Subject talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Wilsons Status</title>
+    <ns>0</ns>
+    <id>305550</id>
+    <revision>
+      <id>2497805</id>
+      <parentid>2373587</parentid>
+      <timestamp>2013-03-06T15:30:54Z</timestamp>
+      <contributor>
+        <username>Wilson</username>
+        <id>75960</id>
+      </contributor>
+      <comment>seems more appropriate</comment>
+      <text>SMU won a football game, we are now 1-11. Our perfect season was ruined, thanks to UCONN. We had something special going and you just had to suck.</text>
+      <sha1>ls63cb69di8i31p5qikhx6xxot5jcfw</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Fontenode member 1</title>
+    <ns>2</ns>
+    <id>305553</id>
+    <revision>
+      <id>2010226</id>
+      <parentid>1312964</parentid>
+      <timestamp>2010-12-30T23:13:58Z</timestamp>
+      <contributor>
+        <username>darealmvp</username>
+        <id>305554</id>
+      </contributor>
+      <minor />
+      <comment>Fix URI.</comment>
+      <text> Bcelii fontenode</text>
+      <sha1>0gkpggijneqw3uo8wpegsp3syggw049</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Fontenode member 2</title>
+    <ns>2</ns>
+    <id>305554</id>
+    <revision>
+      <id>1747578</id>
+      <parentid>152202</parentid>
+      <timestamp>2010-03-31T02:54:23Z</timestamp>
+      <contributor>
+        <username>shals</username>
+        <id>5</id>
+      </contributor>
+      <minor />
+      <text>shalala final project fontenode</text>
+      <sha1>4dskrnzouas0ypazmfcx6vw7xg5v1zl</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Fontenode member 3</title>
+    <ns>0</ns>
+    <id>305555</id>
+    <revision>
+      <id>2247133</id>
+      <parentid>2247132</parentid>
+      <timestamp>2012-01-06T07:39:33Z</timestamp>
+      <contributor>
+        <username>dnguyen</username>
+        <id>134830</id>
+      </contributor>
+      <text>danhwin final project fontenode</text>
+      <sha1>iqg0y77ledcchyilr4y5k95bnmhfbma</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>structures</title>
+    <ns>0</ns>
+    <id>305557</id>
+    <revision>
+      <id>1925731</id>
+      <parentid>1925728</parentid>
+      <timestamp>2010-09-02T06:08:27Z</timestamp>
+      <contributor>
+        <username>Jomegat</username>
+        <id>12605</id>
+      </contributor>
+      <minor />
+      <comment>Reverted edits by [[Special:Contributions/119.152.89.121|119.152.89.121]] ([[User talk:119.152.89.121|talk]]) to last revision by [[User:Whiteknight|Whiteknight]]</comment>
+      <text> Data structures final project </text>
+      <sha1>13uxf6qw4x9wgkeiv8rva3vy3ftz8x9</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>KNW2300</title>
+    <ns>0</ns>
+    <id>305559</id>
+    <revision>
+      <id>2596377</id>
+      <parentid>2596255</parentid>
+      <timestamp>2013-12-27T00:35:15Z</timestamp>
+      <contributor>
+        <username>Gadfium</username>
+        <id>10190</id>
+      </contributor>
+      <comment>rv, unexplained deletion of content.</comment>
+      <text>Peace, Love, Robots</text>
+      <sha1>o77umgv0lzcfiser6mqjuxm3w9hcw2e</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Organic Chemistry/Alkenes</title>
+    <ns>0</ns>
+    <id>305560</id>
+    <revision>
+      <id>2586844</id>
+      <parentid>2584695</parentid>
+      <timestamp>2013-12-02T17:33:43Z</timestamp>
+      <contributor>
+        <ip>129.65.85.242</ip>
+      </contributor>
+      <comment>/* Stereochemistry and Orientation */</comment>
+      <text> Data structures final project </text>
+      <sha1>f2kaxyir7whb1w7j5c9u2a191f85xnv</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Scarlets Status</title>
+    <ns>0</ns>
+    <id>305562</id>
+    <revision>
+      <id>2594803</id>
+      <parentid>2557242</parentid>
+      <timestamp>2013-12-19T21:29:44Z</timestamp>
+      <contributor>
+        <ip>142.51.165.79</ip>
+      </contributor>
+      <comment>/* By optical activity: (+)- and (-)- */</comment>
+      <text>I love tutoring middle school students because they so blatantly haven't taken Learning to Let your Dreams Die -101 yet</text>
+      <sha1>srllyrellr7ukxls9x2eue6dnn9k02l</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Thomas status</title>
+    <ns>0</ns>
+    <id>305563</id>
+    <revision>
+      <id>2168742</id>
+      <parentid>997407</parentid>
+      <timestamp>2011-09-16T01:04:21Z</timestamp>
+      <contributor>
+        <ip>24.149.24.25</ip>
+      </contributor>
+      <text>Do you ever have those moments where you think something like "I bet if I licked my finger and touched that glowing-red stove burner really quick that it wouldn't hurt" but then you realize it's literally the dumbest thought you've ever had?</text>
+      <sha1>nijpb9y9a4p4b5sk2z8lbjquwd4zthz</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+  <page>
+    <title>Chris status</title>
+    <ns>0</ns>
+    <id>305567</id>
+    <revision>
+      <id>2631101</id>
+      <parentid>2631097</parentid>
+      <timestamp>2014-04-17T02:59:27Z</timestamp>
+      <contributor>
+        <username>chris ayala</username>
+        <id>16549</id>
+      </contributor>
+      <text>Shattered my phone's screen today. Not only did I drop the phone on the hard ground in the Innovation Gym, but I didn't realize it had fallen right behind the wheel of my chair until I proceeded to roll over it. The shattering/ground-scratching sound was painful...</text>
+      <sha1>114es5qjxbbsxz1ubb79l44emjwy6mj</sha1>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+    </revision>
+  </page>
+</mediawiki>
