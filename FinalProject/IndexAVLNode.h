@@ -9,7 +9,10 @@ class IndexAVLNode
 public:
     //constructor with no parameters
     IndexAVLNode();
-    ~IndexAVLNode(){}
+    ~IndexAVLNode(){
+
+        //cout<<"END destructor: IndexAVLNode"<<endl;
+    }
 
     //constructor that accepts word, left pointer, right pointer and height
     IndexAVLNode(std::string word, IndexAVLNode* l,

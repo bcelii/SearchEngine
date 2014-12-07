@@ -3,10 +3,11 @@ ST
 BI 1
 ET 
 IF WikiDumpPart180.xml
-SE AND bcelii Fontenode
+SE AND brendan man
+PP 1
 ST
 NS
-SE AND brendan man
+SE AND bcelii Fontenode
 ST
 PP 1
 ET

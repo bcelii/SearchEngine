@@ -12,7 +12,12 @@ XMLParser::XMLParser()
 }
 
 XMLParser::~XMLParser(){
-    delete myHandler;
+    cout<<"BEGIN Destructor: XMLParser"<<endl;
+    if(myHandler != NULL){
+
+        delete myHandler;
+    }
+    cout<<"After delete myHandler"<<endl;
     //delete myLookUpTable;
 
     if (XMLDumpFile != nullptr)
@@ -26,11 +31,13 @@ XMLParser::~XMLParser(){
     /*if (text != nullptr)
         delete[] text;
     text = nullptr;*/
-
+    cout<<"before XMLFileParser"<<endl;
     myParser.~XMLFileParser();
-    doc.clear(); //deallocate memory pool of rapidxml class
+    cout<<"Before doc.clear"<<endl;
+    //doc.clear(); //deallocate memory pool of rapidxml class
     pageMin.clear();
     pageMax.clear();
+    cout<<"END Destructor: XMLParser"<<endl;
 }
 
 void XMLParser::createIndex(int choice){

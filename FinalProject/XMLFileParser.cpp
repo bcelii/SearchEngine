@@ -10,10 +10,11 @@ XMLFileParser::XMLFileParser(){
 }
 
 XMLFileParser::~XMLFileParser(){
-
+    cout<<"BEGIN Destructor: XMLFileParser"<<endl;
     pageNode = nullptr;
     textNode = nullptr;
     authorNode = nullptr;
+    cout<<"End Destructor: XMLFileParser"<<endl;
 
 }
 

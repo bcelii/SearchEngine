@@ -2,7 +2,7 @@
 #define INDEX_H
 #include<string>
 #include<vector>
-
+#include<iostream>
 class Index
 {
 public:
@@ -10,7 +10,9 @@ public:
        wordCount = 0;
     }
 
-    ~Index(){}
+    ~Index(){
+            std::cout<<"END destructor: Index"<<std::endl;
+    }
 
     //getters, setters
     int getWordCount(void);

@@ -489,7 +489,10 @@ WordParser2::WordParser2(int length)
 }
 
 WordParser2::~WordParser2(){
-   delete stopWordList;
+   if(stopWordList != NULL){
+
+        delete stopWordList;
+   }
 }
 
 void WordParser2::setSourceFile(char* file){

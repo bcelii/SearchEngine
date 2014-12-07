@@ -7,7 +7,7 @@ StressMode::StressMode()
 
 StressMode:: ~StressMode()
 {
-
+    cout<<"END Destructor: Stress Test"<<endl;
 }
 
 void StressMode::docFileParser(string& fileName)

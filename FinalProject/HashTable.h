@@ -64,7 +64,7 @@ public:
     }
 
     //ructor that sets initial size to 101 by default
-    explicit HashTable( int size = 5000 )
+    explicit HashTable( int size = 20 )
       :Index(),currentSize( 0 )
       { theLists.resize( size );
         //cout<<"TheLists ructor called"<<endl;

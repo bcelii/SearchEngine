@@ -24,7 +24,15 @@ InteractiveMode::InteractiveMode()
 }
 
 InteractiveMode::~InteractiveMode(){
-    delete myXMLParser;
+
+    cout<<"BEGIN Destructor: InteractiveMode"<<endl;
+    if(myXMLParser != NULL){
+        delete myXMLParser;
+    }
+    if(IMHandler != NULL){
+       delete IMHandler;
+    }
+    cout<<"End Destructor: Interactive Mode "<<endl;
 }
 
 void InteractiveMode::clearIndex(){
