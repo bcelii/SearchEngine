@@ -216,7 +216,7 @@ bool XMLParser::navigateToPage(int page)
     cout<<"End = "<<end;
     if (page <= 305548){
         cout<<"inside less that 305548"<<endl;
-        fileNo = binarySearch(0, 178, page)+1;}
+        fileNo = binarySearch(0, 179, page)+1;}
     else{
         cout<<"outside 305548"<<endl;
         fileNo = binarySearch(179, end, page)+1;}

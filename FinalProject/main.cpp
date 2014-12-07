@@ -36,14 +36,16 @@ int main(){
 */
 int main(){
 
-    /*InteractiveMode IM;
+    MaintMode maint;
+    maint.getUserCommand();
+    InteractiveMode IM;
     char* inputFile = new char[80];
     strcpy(inputFile,"Index.txt");
     IM.setInputFileForIndex(inputFile);
     IM.setTotalDocs(170000);
-    IM.interactiveUI();*/
-    StressMode SM;
-    SM.stressUI();
+    IM.interactiveUI();
+    //StressMode SM;
+    //SM.stressUI();
 }
 
 
