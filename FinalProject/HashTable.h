@@ -64,7 +64,7 @@ public:
     }
 
     //ructor that sets initial size to 101 by default
-    explicit HashTable( int size = 10 )
+    explicit HashTable( int size = 5000 )
       :Index(),currentSize( 0 )
       { theLists.resize( size );
         //cout<<"TheLists ructor called"<<endl;
@@ -73,6 +73,17 @@ public:
             theLists[i] = new AvlTree<HashedObj>();
         }
       }
+
+    //destructor for HashTable
+    ~HashTable(){
+        for(int i = 0;i<theLists.size();i++){
+            if(theLists.at(i) != NULL){
+                delete theLists.at(i);
+            }
+        }
+
+        cout<<"End of Hash Table Destructor"<<endl;
+    }
 
     bool contains(  HashedObj & x ) override
     {

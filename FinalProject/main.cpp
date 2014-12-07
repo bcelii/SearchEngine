@@ -2,6 +2,7 @@
 #include"XMLParser.h"
 #include"FakeXMLParser.h"
 #include"InteractiveMode.h"
+#include"StressMode.h"
 using namespace std;
 /*
 int main()
@@ -35,12 +36,14 @@ int main(){
 */
 int main(){
 
-    InteractiveMode IM;
+    /*InteractiveMode IM;
     char* inputFile = new char[80];
     strcpy(inputFile,"Index.txt");
     IM.setInputFileForIndex(inputFile);
     IM.setTotalDocs(170000);
-    IM.interactiveUI();
+    IM.interactiveUI();*/
+    StressMode SM;
+    SM.stressUI();
 }
 
 

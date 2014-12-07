@@ -61,6 +61,7 @@ void MaintMode::getUserCommand()
     cout << "Re-store index" << endl;
     char* out = "Index.txt\0";
     myXMLParser.storeOffIndex(out);
+    myXMLParser.storeOffPageRange();
     delete[] out;
 
 }

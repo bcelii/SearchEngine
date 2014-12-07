@@ -29,7 +29,13 @@ XMLParser::~XMLParser(){
 
     myParser.~XMLFileParser();
     doc.clear(); //deallocate memory pool of rapidxml class
+    pageMin.clear();
+    pageMax.clear();
+}
 
+void XMLParser::createIndex(int choice){
+    myHandler->createIndex(choice);
+    buildIndexFromMemory(choice);
 }
 
 void XMLParser::setXMLDumpFile(string& passedFile){
@@ -119,6 +125,7 @@ void XMLParser::storeOffNewData(string &fileName)
     xml_node<>* pageNode = docNode->first_node("page");
     string text;
 
+    cout << "PageMin size: " << pageMin.size();
     //loop through all pages in one file
     myParser.setNodes(pageNode);
     id = myParser.findPageID();
@@ -141,8 +148,23 @@ void XMLParser::storeOffNewData(string &fileName)
         pageNode = pageNode->next_sibling("page");
 
     }
+    cout << "New PageMin size: " << pageMin.size() << endl;
 
 
+}
+
+void XMLParser::storeOffPageRange()
+{
+    ofstream out;
+    out.open("pageRange.txt");
+
+    size_t size = pageMin.size();
+
+    for (size_t i = 0; i < size; i++){
+        out << pageMin.at(i) << ", " << pageMax.at(i) << endl;
+    }
+
+    out.close();
 }
 
 //function stores all words in page into data structure index
@@ -164,7 +186,7 @@ void XMLParser::buildIndexFromMemory(int choice){
     char* input = "Index.txt";
     myHandler->setInputFile(input);
     myHandler->buildIndexFromMemory(choice);
-    delete input;
+    delete[] input;
 }
 
 void XMLParser::loadPageRange(){
@@ -176,6 +198,8 @@ void XMLParser::loadPageRange(){
     }
 
     int min, max;
+    pageMin.clear();
+    pageMax.clear();
     while (rangeDoc >> min){
         rangeDoc.ignore();
         pageMin.push_back(min);
@@ -189,15 +213,19 @@ bool XMLParser::navigateToPage(int page)
 {
     size_t fileNo = 1;
     size_t end = pageMin.size()-1;
-    if (page <= 305548)
-        fileNo = binarySearch(0, 179, page)+1;
-    else
-        fileNo = binarySearch(179, end, page)+1;
-
+    cout<<"End = "<<end;
+    if (page <= 305548){
+        cout<<"inside less that 305548"<<endl;
+        fileNo = binarySearch(0, 178, page)+1;}
+    else{
+        cout<<"outside 305548"<<endl;
+        fileNo = binarySearch(179, end, page)+1;}
+    cout<<"End of binary Search"<<endl;
     string fileName = "WikiDumpPart";
     fileName += to_string(fileNo);
     fileName += ".xml";
 
+    cout << "navigate to file: " << fileName << endl;
     setXMLDumpFile(fileName);
     doc.clear();
     doc.parse<0>(XMLDumpFile);
@@ -218,6 +246,7 @@ bool XMLParser::navigateToPage(int page)
 
 size_t XMLParser::binarySearch(size_t begin, size_t end, int page)
 {
+   // cout << "in Binary Search" << endl;
     size_t mid = (begin+end)/2;
     if (page >= pageMin.at(mid) && page <= pageMax.at(mid))
         return mid;
