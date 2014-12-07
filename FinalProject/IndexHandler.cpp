@@ -45,6 +45,11 @@ bool IndexHandler::isIndexNULL(){
 }
 
 void IndexHandler::createIndex(int choice){
+    clearIndex();
+    if(myIndex == NULL){
+        delete myIndex;
+    }
+
     if(choice == 1){
 
         myIndex = new AvlTree<string>();
@@ -97,6 +102,10 @@ void IndexHandler::buildIndexFromMemory(int choice){
      //open input file
     ifstream input;
     input.open(memoryInputFile);
+    cout<<"memoryInputFile = "<<memoryInputFile<<endl;
+    if(!input){
+        cout<<"file did not open"<<endl;
+    }
 
     string word;
     int page;
@@ -483,7 +492,9 @@ std::vector<int>* IndexHandler::findWord(string& passedWord){
 
 //function used by MaintMode to clear entire index
 void IndexHandler::clearIndex(void){
-    myIndex->makeEmpty();
+    if(myIndex != NULL){
+        myIndex->makeEmpty();
+    }
 }
 
 void IndexHandler::loadStopTable(){

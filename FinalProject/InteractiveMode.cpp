@@ -27,6 +27,10 @@ InteractiveMode::~InteractiveMode(){
     delete myXMLParser;
 }
 
+void InteractiveMode::clearIndex(){
+    IMHandler->clearIndex();
+}
+
 void InteractiveMode::setTotalDocs(int x ){
     IMHandler->setTotalDocs(x);
 }
@@ -236,17 +240,22 @@ void InteractiveMode::pickTop15(){
     finalTF.clear();
     finalTitles.clear();
     int counter = 0;
-    //cout<<"TotalPages size = "<<totalPages.size();
+    cout<<"TotalPages size = "<<totalPages.size()<<endl;
+    for(int i = 0;i<totalPages.size();i++){
+        cout<<totalPages.at(i);
+    }
+
     while(finalPages.size()<15 && counter<totalPages.size()){
         int currPage = totalPages.at(counter);
-
+        cout<<"Right before navigate to page"<<endl;
         myXMLParser->navigateToPage(currPage);
+
         //if there was a specified author check and see if it is the same
         cout<<"After navigate to page"<<endl;
         string delimiter = " ";
         if(currAuthor.compare("") != 0){
             string pageAuthor = myXMLParser->getAuthor();
-            cout<<"After get author"<<endl;
+            //cout<<"After get author"<<endl;
             //eliminate any leading white space
             while(pageAuthor.size()>=1){
                if(delimiter.compare(pageAuthor.substr(0,1)) == 0){
@@ -436,7 +445,7 @@ bool InteractiveMode::processQuery(string userQuery){
         //cout<<"NewUserQuery "<<userQuery<<endl;
         //cout<<"size = "<<userQuery.size()<<endl;
 
-        //cout<<"First Command"<<firstCommand;
+        cout<<"Inside Query Process First Command"<<firstCommand;
         string currKeyWord = firstCommand;
 
         //get all words until next keyword
@@ -509,7 +518,7 @@ bool InteractiveMode::processQuery(string userQuery){
                 continue;
 
             }
-
+            cout<<"right before AND, OR"<<endl;
             //call the keyword function
             if(currKeyWord.compare("AND") == 0){
                 //create vectors to pass by reference
@@ -561,11 +570,12 @@ bool InteractiveMode::processQuery(string userQuery){
         }
 
         //order the pages TFs
-
+        cout<<"after ands/ors"<<endl;
         //sort the pages according to frequency
         insertion_sort(totalPages,totalTF,0,totalPages.size()-1);
-
+        cout<<"after Insertion sort"<<endl;
         pickTop15();
+        cout<<"afterTop15"<<endl;
         return false;
 }
 
@@ -958,3 +968,7 @@ int InteractiveMode::containsPageAnd(vector<int>* myList,int page){
 }
 */
 
+void InteractiveMode::reloadPageRange()
+{
+    myXMLParser->loadPageRange();
+}

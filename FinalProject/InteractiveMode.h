@@ -20,6 +20,9 @@ public:
     void setTotalDocs(int);
     void clearAllCurrAndFinalMembers();
     void displayText(int choice);
+    void clearIndex();
+    void reloadPageRange();
+    void buildIndexFromMemory();
 
 private:
     //data members

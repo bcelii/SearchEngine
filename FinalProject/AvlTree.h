@@ -43,6 +43,7 @@ class AvlTree:public Index
     ~AvlTree( )
     {
         makeEmpty(1);
+        cout<<"End Destructor: AVL Tree"<<endl;
     }
 
     vector<int>* findWord(Comparable & word) override {

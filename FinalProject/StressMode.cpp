@@ -23,6 +23,7 @@ void StressMode::docFileParser(string& fileName)
 
     string flag;
 
+    string dummy;
     while (!ifs.eof()){
         ifs >> flag;
 
@@ -39,7 +40,9 @@ void StressMode::docFileParser(string& fileName)
             //get the int following
             ifs>>userChoice;
             structureChoice = userChoice;
-
+            char inputFile[80];
+            strcpy(inputFile,"Index.txt");
+            interact.setInputFileForIndex(inputFile);
             interact.createIndex(userChoice);
             //create the index of the XML parser of Index Handler
             myParser.createIndex(userChoice);
@@ -56,18 +59,24 @@ void StressMode::docFileParser(string& fileName)
             myParser.storeOffNewData(newData);
             char stressOutput[] = "StressTestIndex.txt";
             myParser.storeOffIndex(stressOutput);
+            myParser.storeOffPageRange();
 
             //need to reload index into index handler of
             //interactive mode
             interact.setInputFileForIndex(stressOutput);
-            interact.buildIndexFromMemory(structureChoice);
+            interact.createIndex(structureChoice);
+            interact.reloadPageRange();
+
+            getline(ifs,dummy);
         }
 
         else if (flag == "SE"){
             cout << "search" << endl;
-
+            string arguments;
             getline(ifs,arguments);
+            cout<<"argument for search = "<<arguments<<endl;
             interact.processQuery(arguments);
+
         }
 
         else if (flag == "PP"){
@@ -77,35 +86,42 @@ void StressMode::docFileParser(string& fileName)
 
             interact.displayText(userPage);
 
+            getline(ifs,dummy);
+
 
         }
         else if (flag == "NS"){
             cout<< "new Search"<<endl;
             interact.clearAllCurrAndFinalMembers();
 
+            getline(ifs,dummy);
+
         }
 
         else if (flag == "ST"){
             cout << "start time" << endl;
             startTime();
+
+            getline(ifs,dummy);
         }
 
         else if (flag == "ET"){
             cout << "stop time" << endl;
             stopTime();
+
+            getline(ifs,dummy);
         }
 
         else if (flag == "PT"){
             cout << "print time" << endl;
             printTime();
+
+            getline(ifs,dummy);
         }
 
         else {
             cout << "invalid" << endl;
         }
-        //make sure goes to next line
-        string dummy;
-        getline(ifs,dummy);
     }
 
 }
