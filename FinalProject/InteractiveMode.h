@@ -19,10 +19,10 @@ public:
     ~InteractiveMode();
     //!
     //! Function to set what file will be indexed
-    //!
+    //! \param char* representing index name
     void setInputFileForIndex(char*);
     //! Function to process the boolean query and keywords
-    //!
+    //! \param formatted string to search
     bool processQuery(string);
     //! Function that provides interactive functionality
     //! (provides user options)
@@ -31,7 +31,7 @@ public:
     //! or a Hashtable (user defined choice)
     void createIndex(int choice);
     //! Function to set the total number of documents
-    //!
+    //! \param number: integer representing page number
     void setTotalDocs(int);
     //! Function to clear the top 15 options in order to
     //! prepare for a new search.
@@ -39,6 +39,7 @@ public:
     void clearAllCurrAndFinalMembers();
     //! Function to display the text, title, and page number
     //! of the option chosen by user
+    //! \param choice: integer representing the pages user can display
     void displayText(int choice);
     //! Function to clear the index
     //!
