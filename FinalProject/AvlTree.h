@@ -331,11 +331,11 @@ class AvlTree:public Index
     }
 
 */
-    /**
-     * Internal method to test if an item is in a subtree.
-     * x is item to search for.
-     * t is the node that roots the tree.
-     */
+    //!
+    //! Internal method to test if an item is in a subtree.
+    //! x is item to search for.
+    //! t is the node that roots the tree.
+
     bool contains(  Comparable & x, IndexAVLNode *t )
     {
         if( t == NULL )
