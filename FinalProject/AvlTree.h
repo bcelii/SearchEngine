@@ -331,11 +331,10 @@ class AvlTree:public Index
     }
 
 */
-    //!
+
     //! Internal method to test if an item is in a subtree.
     //! x is item to search for.
     //! t is the node that roots the tree.
-
     bool contains(  Comparable & x, IndexAVLNode *t )
     {
         if( t == NULL )
@@ -349,7 +348,7 @@ class AvlTree:public Index
     }
 
     /**
-     * Method findWord
+     * Method to find a word in the tree. Will save page numbers.
      */
     vector<int>* findWord(  Comparable & x, IndexAVLNode *t )
     {
@@ -372,7 +371,8 @@ class AvlTree:public Index
 
             return t->pageNumbers;
     }
-
+    //! Method to fill a vector with
+    //!information from the page
     void fillPageVector(vector<int>* passedVector,PagesAVLNode* t){
         if(t != NULL){
 
@@ -450,7 +450,9 @@ class AvlTree:public Index
             printTree( t->right );
         }
     }
-
+    /**
+     *  Method to print a subtree (root is t) to a file.
+     */
     void printToFile(ofstream& output, IndexAVLNode *t){
         if( t != NULL )
         {
@@ -471,6 +473,9 @@ class AvlTree:public Index
         }
     }
 
+    /**
+     *  Method to place nodes from a subtree (root t) into a vector.
+     */
     void giveBackNodes(IndexAVLNode *t, vector<IndexAVLNode* >* list ){
          if( t != NULL )
         {
@@ -482,7 +487,7 @@ class AvlTree:public Index
     }
 
     /**
-     * Internal method to clone subtree.
+     * Internal method to clone subtree (root t).
      */
     IndexAVLNode * clone( IndexAVLNode *t )
     {
@@ -501,6 +506,9 @@ class AvlTree:public Index
         return t == NULL ? -1 : t->height;
     }
 
+    /**
+     * Return the side of the tree that is larger.
+     */
     int max( int lhs, int rhs )
     {
         return lhs > rhs ? lhs : rhs;

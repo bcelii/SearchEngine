@@ -7,19 +7,27 @@ using namespace std;
 class IndexAVLNode
 {
 public:
-    //constructor with no parameters
+    //!constructor with no parameters
+    //!
     IndexAVLNode();
+    //! Destructor
+    //!
     ~IndexAVLNode(){
 
         //cout<<"END destructor: IndexAVLNode"<<endl;
     }
 
-    //constructor that accepts word, left pointer, right pointer and height
+    //!constructor that accepts word, left pointer, right pointer and height
+    //!
     IndexAVLNode(std::string word, IndexAVLNode* l,
                            IndexAVLNode* r, int h = 0);
-    //constructor accepts:word, left pointer, right pointer, height and vector pointer
+    //!constructor accepts:word, left pointer, right pointer, height and vector pointer
+    //!
     IndexAVLNode(int Pages,std::string word, IndexAVLNode* l,
                            IndexAVLNode* r, int h = 0);
+    //!
+    //! Constructor that accepts word, left and right pointers, height and page numbers
+    //!
     IndexAVLNode( std::string, IndexAVLNode*,IndexAVLNode*,
                   vector<int>*,int = 0);
 

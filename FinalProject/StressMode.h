@@ -29,7 +29,11 @@ private:
     std::chrono::time_point<std::chrono::system_clock> start, end;
 
 public:
+    //! Constructor, create, open, and clear a file for the output
+    //!
     StressMode();
+    //! Destructor
+    //!
     ~StressMode();
 
     //! reads file and execute commands, displaying times

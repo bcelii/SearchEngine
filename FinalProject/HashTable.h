@@ -30,6 +30,9 @@ template <typename HashedObj>
 class HashTable:public Index
 {
 public:
+    /**
+     * Method that overloads findWord to be used for a hashtable.
+     */
     vector<int>* findWord(HashedObj & word) override  {
         AvlTree<HashedObj>* whichList = theLists[ myhash(word)];
         //cout<<"HashTable find word function"<<endl;
@@ -42,7 +45,10 @@ public:
         return newVector;
 
     }
-
+    /**
+     * Method that uses printTree() from AvlTree to
+     * print contents in sorted order
+     */
     void print(void){
         for(int u = 0;u<theLists.size();u++){
             //cout<<"Tree "<<u<<endl;
@@ -50,7 +56,10 @@ public:
             //cout<<endl;
         }
     }
-    //functions for storing index to hard memory
+
+    /**
+     * Function for storing index to hard memory
+     */
     void printToFile(char* output){
          for(int u = 0;u<theLists.size();u++){
             //cout<<"Tree "<<u<<endl;
@@ -58,12 +67,15 @@ public:
             //cout<<endl;
         }
     }
-
+    /**
+     * Function for storing index to hard memory
+     */
     int getSize(void){
         return currentSize;
     }
 
-    //ructor that sets initial size to 101 by default
+    //! Creates the hashtable
+    //!
     explicit HashTable( int size = 20 )
       :Index(),currentSize( 0 )
       { theLists.resize( size );
@@ -74,7 +86,8 @@ public:
         }
       }
 
-    //destructor for HashTable
+    //!destructor for HashTable
+    //!
     ~HashTable(){
         for(int i = 0;i<theLists.size();i++){
             if(theLists.at(i) != NULL){
@@ -84,7 +97,8 @@ public:
 
         cout<<"End of Hash Table Destructor"<<endl;
     }
-
+    //! Overloaded contains function for hashtables
+    //!
     bool contains(  HashedObj & x ) override
     {
         //creates alias for list that is used as seperate chaining
@@ -98,7 +112,8 @@ public:
         //return find( whichList.begin( ), whichList.end( ), x ) != whichList.end( );
     }
 
-    //makes the entire data structure empty
+    //! Method to empty the entire data structure
+    //!
     void makeEmpty( ) override
     {
         //calls clear funcion on all of the
@@ -109,9 +124,8 @@ public:
         }
     }
 
-    //finds hashing index and then checks that the value is not already in the list
-    //If it is not hten it adds it to the list, increments, and then rehashes if
-    //size is too large
+    //! Method that finds the hashing index and then checks that the value is not already in the list
+    //!If it is not then it adds it to the list, increments, and then rehashes.
     bool insert( HashedObj & x , int &page) override
     {
         ////cout<<"Size = "<<theLists.size()<<endl;
@@ -136,7 +150,8 @@ public:
 
 
 
-    //insert function that accepts frequency as well
+    //! Overloaded insert function that accepts frequency as well
+    //!
     bool insert( HashedObj & x , vector<int>* pageList) override
     {
         ////cout<<"Size = "<<theLists.size()<<endl;
@@ -157,7 +172,8 @@ public:
         return true;
     }
 
-    //overloaded insert function for rehashing
+    //! overloaded insert function for rehashing
+    //!
     bool insert( IndexAVLNode* & node){
         AvlTree<HashedObj>* & whichList = theLists[myhash(node->element)];
 
@@ -189,6 +205,7 @@ public:
     /*vector< AvlTree<string> > getList(void){
      * return theLists;
      * } */
+
     vector< AvlTree<HashedObj> > getList(void){
         return theLists;
     }
@@ -199,6 +216,8 @@ public:
     //vector<list<HashedObj> > theLists;   // The array of Lists
     int  currentSize;
 
+    //! Test
+    //!
     void rehash( )
     {
         //stores off old hash table in vector
@@ -236,6 +255,9 @@ public:
         }
     }
 
+    //!
+    //! Method that returns the
+    //!
     int myhash( HashedObj & x )
     {
         int hashVal = hash( x );
@@ -247,6 +269,8 @@ public:
         return hashVal;
     }
 
+    //! Test
+    //!
     int hash(  HashedObj & key )
     {
         int hashVal = 0;
