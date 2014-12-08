@@ -25,6 +25,7 @@ using namespace std;
 // ******************ERRORS********************************
 // Throws UnderflowException as warranted
 
+//!
 template <typename Comparable>
 class AvlTree:public Index
 {
