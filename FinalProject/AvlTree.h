@@ -30,22 +30,30 @@ template <typename Comparable>
 class AvlTree:public Index
 {
   public:
+    //! constructor for the class AvlTree
+    //!
     AvlTree( ) : Index(),root( NULL )
     {
         //cout<<"Root = "<<root<<endl;
     }
    //copy ructor
-
+    //! constructor for the class AvlTree
+    //! accepts one arg, for the right hand side of the tree
+    //! and sets it to a this pointer
     AvlTree(  AvlTree & rhs ) : root( NULL )
     {
         *this = rhs;
     }
     //destructor
+    //! destructor for the class AvlTree.
+    //! Kindly informs the world of the destruction performed by the function
+    //! \makeEmpty, which empties a subtree (or here, the whole tree)
     ~AvlTree( )
     {
         makeEmpty(1);
         cout<<"End Destructor: AVL Tree"<<endl;
     }
+
 
     vector<int>* findWord(Comparable & word) override {
         return findWord(word,root);
@@ -77,7 +85,8 @@ class AvlTree:public Index
     /**
      * Returns true if x is found in the tree.
      */
-
+    //! Tests if the tree contains x, is an override of
+    //! \contains
     bool contains(  Comparable & x )  override
     {
         return contains( x, root );
@@ -105,6 +114,9 @@ class AvlTree:public Index
             printTree( root );
     }
 
+    /**
+     * Prints the contents of the tree to a file
+     */
     void printToFile(char* output )
     {
         ofstream out;
@@ -129,7 +141,7 @@ class AvlTree:public Index
         }
     }*/
 
-    /*,*
+    /**
      * Make the tree logically empty.
      * int x will signal that it is the destructor that is calling the makeEmpty
      * So the word lists can be deleted
@@ -155,7 +167,7 @@ class AvlTree:public Index
 
     }
 
-    //overloaded insert for building index from hard memory
+    //!overloaded insert for building index from hard memory
     bool insert( Comparable &x, vector<int>* pages ){
 
         insert( x, pages, root );
@@ -260,7 +272,7 @@ class AvlTree:public Index
         t->height = max( height( t->left ), height( t->right ) ) + 1;
     }
 
-    //overloaded insert for building index form hard memory
+    //!overloaded insert for building index form hard memory
     void insert(  Comparable & x,vector<int>* pages, IndexAVLNode * & t )
     {
         if( t == NULL )
@@ -336,6 +348,9 @@ class AvlTree:public Index
             return true;    // Match
     }
 
+    /**
+     * Method findWord
+     */
     vector<int>* findWord(  Comparable & x, IndexAVLNode *t )
     {
         //cout<<"findWord of AVL tree"<<endl;
